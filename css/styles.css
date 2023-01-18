@@ -2,6 +2,8 @@ html,
 body {
   margin: 0px;
   -ms-overflow-style: none;
+  background-color: white;
+  overflow: hidden;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -9,24 +11,25 @@ body {
 
 #root {
   position: absolute;
-  width: 360px;
-  height: 750px;
-  background: gray;
+  width: 100vw;
+  height: 100vh;
+  background: white;
 }
 .header {
   position: fixed;
-  width: 360px;
-  height: 83px;
+  width: 100vw;
+  height: 9vh;
   background: white;
   z-index: 100;
+  margin: 0px;
 }
 h1 {
   position: absolute;
   vertical-align: center;
   top: 0px;
-  margin-top: 20px;
-  width: 340px;
-  height: 24px;
+  right: 4vw;
+  width: 100vw;
+  height: 3vh;
   text-align: right;
   font-family: "Roboto";
   font-style: normal;
@@ -38,10 +41,10 @@ h1 {
 /****************index page****************/
 .page-container {
   position: absolute;
-  top: 83px;
+  top: 9vh;
   left: 0px;
-  width: 360px;
-  height: 667px;
+  width: 100vw;
+  height: 91vh;
   padding: auto;
   background-color: white;
 }
@@ -53,9 +56,9 @@ h1 {
 #newFeed {
   display: block;
   position: absolute;
-  left: 12px;
-  width: 336px;
-  height: 67px;
+  left: 4vw;
+  width: 92vw;
+  height: 10vh;
   text-align: center;
   background: #bb2649;
   border-radius: 12px;
@@ -70,10 +73,10 @@ h1 {
 
 #feedBox {
   position: fixed;
-  top: 170px;
+  top: 21vh;
   left: 0px;
-  width: 360px;
-  height: 600px;
+  width: 100vw;
+  height: 76vh;
   padding: auto;
   background-color: white;
 }
@@ -82,21 +85,24 @@ h1 {
   top: 0px;
   left: 0px;
   list-style: none;
-  width: 360px;
-  height: 600px;
+  width: 100vw;
+  height: 73vh;
   padding: 0px;
   margin: 0px;
   overflow: scroll;
 }
 
 .msgList li {
-  height: 76px;
+  position: relative;
+  left: 4vw;
+  width: 92vw;
+  height: 11vh;
 }
 .msg-link {
   position: relative;
   box-sizing: border-box;
   margin: 16px 0px;
-  width: 360px;
+  width: 92vw;
   height: 76px;
   background-color: #bb2649;
   display: flex;
@@ -108,10 +114,10 @@ h1 {
 
 .msg-item {
   position: relative;
-  bottom: 91px;
+  bottom: 14vh;
   box-sizing: border-box;
   margin: 16px 0px;
-  width: 360px;
+  width: 92vw;
   height: 76px;
   background-color: white;
   display: flex;
@@ -126,12 +132,13 @@ h1 {
   border-radius: 12px 0px 0px 12px;
 }
 .msg-text {
-  width: 250px;
+  width: 86vw;
   height: 76px;
   border-radius: 12px;
 }
 .msg-title {
   height: 23px;
+  width: 65vw;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -146,8 +153,11 @@ h1 {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  word-wrap: break-word;
 }
 .msg-content {
+  height: 23px;
+  width: 65vw;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -159,21 +169,22 @@ h1 {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  word-wrap: break-word;
 }
 /****************new page****************/
-.newFeedForm {
+#newFeedForm {
   box-sizing: border-box;
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 360px;
-  height: 668px;
+  width: 100vw;
+  height: 100vh;
 }
 .fakeImgBox {
   box-sizing: border-box;
   margin: auto;
   margin-top: 16px;
-  width: 328px;
+  width: 92vw;
   height: 96px;
   line-height: 96px;
   background: #ffffff;
@@ -184,7 +195,8 @@ h1 {
   color: #e2e2e2;
 }
 .inputBox {
-  padding-left: 16px;
+  width: 92vw;
+  padding-left: 4vw;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -194,13 +206,12 @@ h1 {
 
 .inputBox hr {
   position: relative;
-  left: -10px;
-  width: 320px;
+  width: 92vw;
   color: #e8e8e8;
 }
 
 .inputBox input {
-  width: 320px;
+  width: 92vw;
   height: 30px;
   font-family: "Roboto";
   font-style: normal;
@@ -211,8 +222,8 @@ h1 {
 }
 .inputBox textarea {
   position: absolute;
-  width: 320px;
-  height: 225px;
+  width: 92vw;
+  height: 150px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -223,10 +234,10 @@ h1 {
 }
 #postBtn {
   display: block;
-  position: absolute;
-  bottom: 16px;
-  left: 12px;
-  width: 328px;
+  position: fixed;
+  bottom: 4vh;
+  left: 4vw;
+  width: 92vw;
   height: 66px;
   text-align: center;
   background: #bb2649;
@@ -246,16 +257,16 @@ h1 {
 }
 
 .detail img {
-  width: 360px;
-  height: 265px;
+  width: 100vw;
+  height: 100vw;
 }
 
 .detail h3 {
-  width: 328px;
+  width: 92vw;
   overflow: hidden;
   height: auto;
-  margin-left: 16px;
-  margin-bottom: 10px;
+  margin-left: 4vw;
+  margin-bottom: 4vh;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -265,22 +276,21 @@ h1 {
   color: #000000;
 }
 .detail .date {
-  width: 328px;
+  width: 92vw;
   margin-top: 0px;
-  margin-left: 16px;
-  margin-bottom: 20px;
+  margin-left: 4vw;
+  margin-bottom: 4vh;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 12px;
 }
 .detail .content {
-  width: 328px;
+  width: 92vw;
   overflow: hidden;
   height: auto;
-  margin-left: 16px;
-
+  margin-left: 4vw;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -288,9 +298,9 @@ h1 {
   line-height: 18px;
 }
 .detail .container {
-  width: 328px;
+  width: 92vw;
   height: 28px;
-  margin-left: 16px;
+  margin-left: 4vw;
   text-align: right;
   font-size: 20px;
 }
@@ -320,15 +330,15 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 324px;
+  width: 92vw;
   height: 30px;
   overflow: hidden;
   height: auto;
-  margin-left: 16px;
+  margin-left: 4vw;
 }
 #commentView .content {
   margin-left: 0px;
-  width: 280px;
+  width: 80vw;
 }
 .reviewDelete {
   text-align: center;
@@ -340,24 +350,22 @@ h1 {
 
 .CommentWrite {
   position: fixed;
-  height: 70px;
+  padding-top: 10px;
+  height: 50px;
   bottom: 0px;
-  width: 360px;
+  width: 100vw;
   background-color: white;
   z-index: 10;
 }
 
 #commentInput {
-  width: 270px;
-  margin-top: 16px;
-  margin-left: 16px;
-  margin-right: 10px;
+  width: 80vw;
+  margin-left: 4vw;
   height: 30px;
 }
 #commentBtn {
-  width: 34px;
+  width: 10vw;
   height: 34px;
-  margin-top: 16px;
   background-color: white;
   border: 1px solid gray;
   border-radius: 10px;
@@ -371,13 +379,14 @@ h1 {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 360px;
-  height: 668px;
+  width: 100vw;
+  height: 88vh;
+  overflow: scroll;
 }
 
 .originalImgBox img {
-  width: 360px;
-  height: 265px;
+  width: 100vw;
+  height: 100vw;
 }
 
 .editFeedForm h2 {
@@ -389,9 +398,9 @@ h1 {
 }
 
 .editFeedForm .inputBox {
-  width: 328px;
-  height: 28px;
-  margin-left: 16px;
+  width: 92vw;
+  margin-left: 4vw;
+  height: 300px;
   margin-bottom: 10px;
   font-family: "Roboto";
   font-style: normal;
@@ -404,9 +413,8 @@ h1 {
 }
 
 .editFeedForm textarea {
-  width: 328px;
   height: 150px;
-
+  width: 92vw;
   margin-bottom: 10px;
   font-family: "Roboto";
   font-style: normal;
@@ -421,9 +429,8 @@ h1 {
 #edittBtn {
   display: block;
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  width: 328px;
+  left: 4vw;
+  width: 92vw;
   height: 66px;
   text-align: center;
   background: #bb2649;
