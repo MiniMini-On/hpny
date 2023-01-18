@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>HPNY 2023</title>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/136c1316b2.js" crossorigin="anonymous"></script>
   </head>
+
   <body>
-    <div class="page-container">
-      <div id="feed-container"></div>
-      <a id="newFeed" href="/post" onclick="route();"><i class="fa-solid fa-pencil"></i> 새 글 작성</a>
-      <div id="feedBox" Content-Security-Policy: upgrade-insecure-requests></div>
+    <div id="root">
+      <div class="header">
+        <h1>HPNY 2023</h1>
+      </div>
+      <div id="main-page"></div>
     </div>
+
+    <script type="module" src="./js/index.js"></script>
+    <script src="./js/post.js"></script>
   </body>
 </html>
