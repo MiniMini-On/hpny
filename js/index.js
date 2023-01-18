@@ -4,7 +4,7 @@ import { route, handleLocation } from "./router.js";
 window.onload = () => {
   const path = window.location.pathname;
   console.log(path);
-  if (path == "/hpny/") {
+  if (path == "/") {
     Feeds();
   }
 };
@@ -12,7 +12,7 @@ window.onload = () => {
 window.onpopstate = back;
 function back() {
   handleLocation();
-  if (window.location.pathname == "/hpny/") {
+  if (window.location.pathname == "/") {
     Feeds();
   }
 }
