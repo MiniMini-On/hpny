@@ -39,7 +39,7 @@ export function Edit(detailId) {
         },
         body: JSON.stringify({
           title: title,
-          body: content,
+          content: content,
           image: "https://source.unsplash.com/random/360×360",
         }),
       })

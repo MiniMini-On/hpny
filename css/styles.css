@@ -47,6 +47,7 @@ h1 {
   height: 91vh;
   padding: auto;
   background-color: white;
+  overflow: scroll;
 }
 /*새글작성 버튼*/
 
@@ -172,14 +173,11 @@ h1 {
   word-wrap: break-word;
 }
 /****************new page****************/
+
 #newFeedForm {
-  box-sizing: border-box;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
+  height: 75vh;
 }
+
 .fakeImgBox {
   box-sizing: border-box;
   margin: auto;
@@ -223,7 +221,7 @@ h1 {
 .inputBox textarea {
   position: absolute;
   width: 92vw;
-  height: 150px;
+  height: 200px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -253,7 +251,7 @@ h1 {
 }
 /****************detail page****************/
 #feedDetail-container {
-  overflow: scroll;
+  height: 89vh;
 }
 
 .detail img {
@@ -373,7 +371,9 @@ h1 {
 }
 
 /*피드 수정 페이지*/
-
+#editContainer {
+  height: 75vh;
+}
 .editFeedForm {
   box-sizing: border-box;
   position: absolute;
@@ -381,7 +381,6 @@ h1 {
   left: 0px;
   width: 100vw;
   height: 88vh;
-  overflow: scroll;
 }
 
 .originalImgBox img {
@@ -428,7 +427,8 @@ h1 {
 
 #edittBtn {
   display: block;
-  position: absolute;
+  position: fixed;
+  bottom: 4vh;
   left: 4vw;
   width: 92vw;
   height: 66px;
@@ -443,5 +443,4 @@ h1 {
   line-height: 66px;
   color: #ffffff;
   border: none;
-  cursor: pointer;
 }
