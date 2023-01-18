@@ -14,10 +14,11 @@ body {
   background: gray;
 }
 .header {
-  position: absolute;
+  position: fixed;
   width: 360px;
   height: 83px;
   background: white;
+  z-index: 100;
 }
 h1 {
   position: absolute;
@@ -45,6 +46,10 @@ h1 {
   background-color: white;
 }
 /*새글작성 버튼*/
+
+#feed-container {
+  position: fixed;
+}
 #newFeed {
   display: block;
   position: absolute;
@@ -64,8 +69,8 @@ h1 {
 }
 
 #feedBox {
-  position: absolute;
-  top: 67px;
+  position: fixed;
+  top: 170px;
   left: 0px;
   width: 360px;
   height: 600px;
@@ -339,7 +344,6 @@ h1 {
   bottom: 0px;
   width: 360px;
   background-color: white;
-  opacity: 0.8;
   z-index: 10;
 }
 

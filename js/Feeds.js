@@ -14,7 +14,7 @@ export function Feeds() {
 
     mainElement.innerHTML = `<ul class="msgList"></ul>`;
     const msgList = mainElement.querySelector(".msgList");
-
+    msg = msg.slice().reverse();
     msg.forEach((item) => {
       console.log(item);
       const msgDetailList = document.createElement("li");
