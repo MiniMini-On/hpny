@@ -1,6 +1,6 @@
 # Vanilla js SPA
 
-- It was a challenge for creating vanilla js-SPA.
+- It was a challenge for creating Single Page App using only vanilla js without any framework.
 
 - It is a simple web site to send and receive Happy New Year's messages. 
 
