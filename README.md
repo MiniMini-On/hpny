@@ -1,6 +1,6 @@
 # Vanilla js SPA
 
-- It was a challenge for create vanilla js SPA.
+- It was a challenge for creating vanilla js-SPA.
 
 - It is a simple web site to send and receive Happy New Year's messages. 
 
