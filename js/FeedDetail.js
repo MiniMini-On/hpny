@@ -4,7 +4,7 @@ import { Edit } from "./Edit.js";
 
 export function FeedDetail(detailId) {
   async function getmsgSigleData() {
-    const response = await fetch(`http://43.201.103.199/post/${detailId}`);
+    const response = await fetch(`api/post/${detailId}`);
     const detail = await response.json();
     console.log("detail.data.post");
     console.log(detail.data.post);
@@ -23,20 +23,20 @@ export function FeedDetail(detailId) {
       <p class="date">${feed.createdAt.slice(0, 10)}</p>
       <div class="content">${feed.content}</div>
       <div class="container">    
-      <a id="editBtn" href="/Edit"></a>
+      <a id="editBtn" href="/edit#${detailId}"></a>
       <i class="fa-regular fa-pen-to-square"></i>
       <button id="removeBtn" href="/"><i class="fa-regular fa-trash-can"></i></button>
       </div>
       <hr>
       <div id=commentView>
       </div>
-      <div class="CommentWrite">
+      <form class="CommentWrite">
         <input type="text" id="commentInput">
         <button id="commentBtn"><i class="fa-regular fa-paper-plane"></i></button>
-      </div>
+      </form>
       `;
     detailElement.querySelector("#removeBtn").onclick = async () => {
-      await fetch(`http://43.201.103.199/post/${detailId}`, {
+      await fetch(`api/post/${detailId}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -49,7 +49,8 @@ export function FeedDetail(detailId) {
       Edit(detailId);
     };
 
-    detailElement.querySelector("#commentBtn").onclick = () => {
+    detailElement.querySelector("#commentBtn").onclick = (e) => {
+      e.preventDefault();
       reviewBtnClick(detailId);
       reviewGet(reviews);
     };
@@ -67,7 +68,7 @@ async function reviewBtnClick(postId) {
 
   console.log(content);
 
-  await fetch(`http://43.201.103.199/comment/${postId}`, {
+  await fetch(`api/comment/${postId}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -98,7 +99,7 @@ function reviewGet(reviews) {
                       <div><button class= "reviewDelete" id='${item.commentId}'><i class="fa-solid fa-xmark"></i></button></div>                        
                   `;
     commentBox.querySelector(".reviewDelete").onclick = async () => {
-      await fetch(`http://43.201.103.199/comment/${item.commentId}`, {
+      await fetch(`api/comment/${item.commentId}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

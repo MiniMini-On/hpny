@@ -9,7 +9,7 @@ async function feedBtnClick(event) {
   const content = feedContent.value;
   console.log(title, content);
 
-  await fetch("http://43.201.103.199/post", {
+  await fetch("api/post", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

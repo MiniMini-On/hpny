@@ -4,7 +4,7 @@ import { route } from "./router.js";
 //피드 수정
 export function Edit(detailId) {
   async function geteditData() {
-    const response = await fetch(`http://43.201.103.199/post/${detailId}`);
+    const response = await fetch(`api/post/${detailId}`);
     const detail = await response.json();
     console.log("detail.data.post");
     console.log(detail.data.post);
@@ -32,7 +32,7 @@ export function Edit(detailId) {
       const editContent = document.querySelector(".editFeedForm textarea");
       const title = editInput.value;
       const content = editContent.value;
-      await fetch(`http://43.201.103.199/post/${detailId}`, {
+      await fetch(`api/post/${detailId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

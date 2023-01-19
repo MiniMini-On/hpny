@@ -12,8 +12,8 @@ export const routes = {
   404: "./pages/404.html",
   "/": "./pages/index.html",
   "/post": "./pages/post.html",
-  "/Edit": "./pages/edit.html",
-  // "/index.html": "./pages/index.html",
+  "/edit": "./pages/edit.html",
+  "/detail": "./pages/detail.html",
 };
 
 export const handleLocation = async () => {
