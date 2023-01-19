@@ -38,6 +38,10 @@ h1 {
   line-height: 28px;
   color: #000000;
 }
+h1 a {
+  text-decoration: none;
+  color: #000000;
+}
 /****************index page****************/
 .page-container {
   position: absolute;
@@ -329,7 +333,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   width: 92vw;
-  height: 30px;
+  margin-bottom: 10px;
   overflow: hidden;
   height: auto;
   margin-left: 4vw;

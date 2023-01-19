@@ -2,7 +2,7 @@
 import { route } from "./router.js";
 import { Edit } from "./Edit.js";
 
-export function FeedDetail(detailId) {
+export function FeedDetail(detailId, res) {
   async function getmsgSigleData() {
     const response = await fetch(`api/post/${detailId}`);
     const detail = await response.json();
@@ -11,9 +11,7 @@ export function FeedDetail(detailId) {
     return detail.data;
   }
   getmsgSigleData().then((data) => {
-    if (document.getElementById("feedDetail-container")) {
-      document.getElementById("feedDetail-container").innerHTML = "";
-    }
+    document.getElementById("feedDetail-container").innerHTML = "";
 
     const feed = data.post;
     const reviews = data.comments;
@@ -47,19 +45,18 @@ export function FeedDetail(detailId) {
     };
 
     detailElement.querySelector("#editBtn").onclick = () => {
-      route();
-      Edit(detailId);
+      route().then((res) => Edit(detailId, res));
     };
 
-    detailElement.querySelector("#commentBtn").onclick = (e) => {
-      e.preventDefault();
+    detailElement.querySelector("#commentBtn").onclick = (event) => {
+      event = event || window.event;
+      event.preventDefault();
       reviewBtnClick(detailId);
       reviewGet(reviews);
     };
-    if (document.getElementById("feedDetail-container")) {
-      document.getElementById("feedDetail-container").append(detailElement);
-      reviewGet(reviews);
-    }
+
+    document.getElementById("feedDetail-container").append(detailElement);
+    reviewGet(reviews);
   });
 }
 

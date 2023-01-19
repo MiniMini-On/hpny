@@ -5,7 +5,7 @@ export const route = (event) => {
   event.preventDefault();
   window.history.pushState({}, "", event.target.href); //페이지 이동없이 주소만 바꿔줌, (브라우저 이동시 넘겨줄 데이터, 변경할 브라우저 제목, 변경할 주소 )
   console.log(window.history);
-  handleLocation();
+  return handleLocation();
 };
 
 export const routes = {
@@ -22,5 +22,5 @@ export const handleLocation = async () => {
   const route = routes[path] || routes[404];
 
   const html = await fetch(route).then((data) => data.text());
-  document.getElementById("main-page").innerHTML = html;
+  return (document.getElementById("main-page").innerHTML = html);
 };

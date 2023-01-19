@@ -36,8 +36,8 @@ export function Feeds() {
       msgDetailList.onclick = () => {
         const detailId = item.postId;
         console.log(detailId);
-        route();
-        FeedDetail(detailId);
+        route().then((res) => FeedDetail(detailId, res));
+        // FeedDetail(detailId);
       };
       msgList.append(msgDetailList);
     });

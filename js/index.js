@@ -7,38 +7,38 @@ window.onload = () => {
   const path = window.location.pathname;
   console.log(path);
   if (path == "/") {
-    Feeds();
+    route().then((res) => Feeds(res));
   } else if (path == "/detail") {
     console.log(location.hash);
     let hash = location.hash.slice(1);
     console.log(hash);
-    FeedDetail(hash);
+    route().then((res) => FeedDetail(hash, res));
   } else if (path == "/edit") {
     console.log(location.hash);
     let hash = location.hash.slice(1);
     console.log(hash);
-    Edit(hash);
+    route().then((res) => Edit(hash, res));
   }
 };
 
-window.onpopstate = back;
-function back() {
-  handleLocation();
+window.onpopstate = () => {
   const path = window.location.pathname;
+  console.log(path);
   if (path == "/") {
-    Feeds();
+    handleLocation().then((res) => Feeds(res));
   } else if (path == "/detail") {
     console.log(location.hash);
     let hash = location.hash.slice(1);
     console.log(hash);
-    FeedDetail(hash);
+    handleLocation().then((res) => FeedDetail(hash, res));
   } else if (path == "/edit") {
     console.log(location.hash);
     let hash = location.hash.slice(1);
     console.log(hash);
-    Edit(hash);
+    handleLocation().then((res) => Edit(hash, res));
   }
-}
+};
+
 window.route = route;
 
 handleLocation();

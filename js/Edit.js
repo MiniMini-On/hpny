@@ -4,7 +4,7 @@ import { route } from "./router.js";
 //피드 수정
 export function Edit(detailId) {
   async function geteditData() {
-    const response = await fetch(`api/post/${detailId}`);
+    const response = await fetch(`http://43.201.103.199/post/${detailId}`);
     const detail = await response.json();
     console.log("detail.data.post");
     console.log(detail.data.post);
@@ -26,26 +26,35 @@ export function Edit(detailId) {
             </div>
             <a id="edittBtn" href="/">수정하기</a>
         `;
-    editElement.querySelector("#edittBtn").onclick = async () => {
-      route();
+    editElement.querySelector("#edittBtn").onclick = async (event) => {
+      event = event || window.event;
       const editInput = document.querySelector(".editFeedForm input");
       const editContent = document.querySelector(".editFeedForm textarea");
       const title = editInput.value;
       const content = editContent.value;
-      await fetch(`api/post/${detailId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          title: title,
-          content: content,
-          image: "https://source.unsplash.com/random/360×360",
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data));
-      Feeds();
+      if (!title) {
+        alert("제목을 입력해주세요");
+        event.preventDefault();
+      } else if (!content) {
+        alert("내용을 입력해주세요");
+        event.preventDefault();
+      } else {
+        route().then((res) => Feeds(res));
+
+        await fetch(`api/post/${detailId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            title: title,
+            content: content,
+            image: "https://source.unsplash.com/random/360×360",
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+      }
     };
     document.getElementById("editContainer").append(editElement);
   });
