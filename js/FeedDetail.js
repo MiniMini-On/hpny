@@ -11,7 +11,9 @@ export function FeedDetail(detailId) {
     return detail.data;
   }
   getmsgSigleData().then((data) => {
-    document.getElementById("feedDetail-container").innerHTML = "";
+    if (document.getElementById("feedDetail-container")) {
+      document.getElementById("feedDetail-container").innerHTML = "";
+    }
 
     const feed = data.post;
     const reviews = data.comments;
