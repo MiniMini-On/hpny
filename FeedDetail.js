@@ -56,9 +56,10 @@ export function FeedDetail(detailId) {
       reviewBtnClick(detailId);
       reviewGet(reviews);
     };
-
-    document.getElementById("feedDetail-container").append(detailElement);
-    reviewGet(reviews);
+    if (document.getElementById("feedDetail-container")) {
+      document.getElementById("feedDetail-container").append(detailElement);
+      reviewGet(reviews);
+    }
   });
 }
 
