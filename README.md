@@ -4,7 +4,7 @@
 
 - It is a simple web site to send and receive Happy New Year's messages. 
 
-- I used only vanilla js in this project(no webpack, no express).
+- I used only vanilla js in this project(even no webpack, no express).
 
 - It is more suitable for mobile than web browser.
 
