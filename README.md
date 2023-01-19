@@ -10,7 +10,7 @@
 
 - You can use it just by downloading and running it through the vs code(live server)
 
-- It is using Rest API provided by the host of the chllenge. The API is not permanent. 
+- It is using Rest API provided by the host of the chllenge. The providing is not permanent. 
 
 - User can post messages including title, content and image, but the image is randomly and automatically choosen when user click the post-button.
 
