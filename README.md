@@ -1,4 +1,5 @@
 # Vanilla js SPA
+- This is a repogitory for web hosting using Netlify.
 
 - It was a challenge for creating Single Page App using only vanilla js without any framework.
 
@@ -8,7 +9,7 @@
 
 - It is more suitable for mobile than web browser.
 
-- You can use it just by downloading and running it through the vs code(live server)
+- You can use it just by downloading and replacing 'api' with 'http://43.201.103.199' in the codes related to rest API bacause I used redirect for hosting. 
 
 - It is using Rest API provided by the host of the chllenge. The providing is not permanent. 
 
