@@ -19,6 +19,6 @@
 ![image](https://user-images.githubusercontent.com/120891914/213487823-1553d1b6-c4f2-4371-b1d2-ce5aedc1e685.png)
 
 
--Hosting link: http://hpny-cy.s3-website.ap-northeast-2.amazonaws.com/
+-Hosting link: https://cozy-maamoul-dcd846.netlify.app/
 
 
