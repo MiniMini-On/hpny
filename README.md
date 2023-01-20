@@ -9,7 +9,7 @@
 
 - It is more suitable for mobile than web browser.
 
-- You can use it just by downloading and replacing 'api' with 'http://43.201.103.199' in the codes related to rest API bacause I used redirect for hosting. 
+- You can use it in your local environment by downloading and replacing 'api' with 'http://43.201.103.199' in the codes related to rest API bacause I used redirect for hosting and then just running through VS code-live server.
 
 - It is using Rest API provided by the host of the chllenge. The providing is not permanent. 
 
